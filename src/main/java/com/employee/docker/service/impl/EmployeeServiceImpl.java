@@ -2,6 +2,7 @@ package com.employee.docker.service.impl;
 
 import java.util.List;
 
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import com.employee.docker.dto.EmployeeRequest;
@@ -11,13 +12,10 @@ import com.employee.docker.repository.EmployeeRepository;
 import com.employee.docker.service.EmployeeService;
 
 @Service
+@RequiredArgsConstructor
 public class EmployeeServiceImpl implements EmployeeService {
 
     private final EmployeeRepository repo;
-
-    public EmployeeServiceImpl(EmployeeRepository repo) {
-        this.repo = repo;
-    }
 
     @Override
     public Employee create(EmployeeRequest req) {
